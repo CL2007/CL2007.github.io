@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CodingChallenge2 | MY BLOG</title><meta name="author" content="Chris Liu"><meta name="copyright" content="Chris Liu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Problem: Create a function that takes in two positive integers start and n and returns a list of the first n terms of the look-and-say sequence starting at the given start.Each term of the look-and-sa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CodingChallenge2">
+<meta property="og:url" content="http://example.com/2021/08/16/CodingChallenge2/index.html">
+<meta property="og:site_name" content="MY BLOG">
+<meta property="og:description" content="Problem: Create a function that takes in two positive integers start and n and returns a list of the first n terms of the look-and-say sequence starting at the given start.Each term of the look-and-sa">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-08-16T20:00:57.000Z">
+<meta property="article:modified_time" content="2021-08-16T20:03:09.704Z">
+<meta property="article:author" content="Chris Liu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/08/16/CodingChallenge2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CodingChallenge2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-08-16 13:03:09'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">MY BLOG</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CodingChallenge2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-08-16T20:00:57.000Z" title="Created 2021-08-16 13:00:57">2021-08-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-08-16T20:03:09.704Z" title="Updated 2021-08-16 13:03:09">2021-08-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CodingChallenge2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Problem:</p>
+<p>Create a function that takes in two positive integers start and n and returns a list of the first n terms of the look-and-say sequence starting at the given start.<br>Each term of the look-and-say sequence (except for the first term) is created from the previous term using the following process.<br>Start with a term in the sequence (for example, 111312211):<br>111312211<br>Split it into subsequences of consecutive repeating digits:<br>111 3 1 22 11<br>Count the number of digits in each subsequence:<br>three 1, one 3, one 1, two 2, two 1<br>Turn everything into digits:<br>3 1, 1 3, 1 1, 2 2, 2 1<br>Now combine everything into one number:<br>3113112221<br>So 3113112221 is the next term in the sequence after 111312211.<br>Examples<br>lookAndSay(1, 7) ➞ {1, 11, 21, 1211, 111221, 312211, 13112221}<br>lookAndSay(123, 4) ➞ {123, 111213, 31121113, 1321123113}<br>lookAndSay(70, 5) ➞ {70, 1710, 11171110, 31173110, 132117132110<br>Notes<br>Your output should be an array of integers in the correct sequence..</p>
+<p>My solution:</p>
+<p>#include <iostream></p>
+<p>using namespace std;</p>
+<p>string getNextSequence ( int n, int i );<br>int *lookAndSay ( int x, int y );</p>
+<p>int main() {</p>
+<pre><code>int *ptr = lookAndSay(123, 4);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>int *lookAndSay ( int x, int y ) {</p>
+<pre><code>int arr[y];
+
+for ( int i = 0 ; i &lt; y ; i++ ) &#123;
+
+    if ( i == 0 ) &#123;
+        arr[i] = stoi(getNextSequence(x, i));
+    &#125; else &#123;
+        arr[i] = stoi(getNextSequence(arr[i - 1], i));
+    &#125;
+
+    cout &lt;&lt; to_string(arr[i]) &lt;&lt; endl;
+
+&#125;
+
+return arr;
+</code></pre>
+<p>}</p>
+<p>string getNextSequence ( int n, int i ) {</p>
+<pre><code>if ( i == 0 ) &#123;
+    return to_string(n);
+&#125;
+
+string num = to_string(n);
+char tmp = num[0];
+
+string count = &quot;&quot;, numbers = &quot;&quot;;
+
+numbers.push_back(tmp);
+
+for ( int i = 1 ; i &lt; num.length() ; i++ ) &#123;
+    if ( num[i] != tmp ) &#123;
+        tmp = num[i];
+        numbers.push_back(tmp);
+    &#125;
+&#125;
+
+char tmpCount = &#39;1&#39;;
+tmp = num[0];
+
+for ( int i = 1 ; i &lt;= num.length() ; i++ ) &#123;
+    if ( num[i] != tmp ) &#123;
+
+        tmp = num[i];
+        count.push_back(tmpCount);
+
+        tmpCount = &#39;1&#39;;
+        tmp = num[i];
+        continue;
+
+    &#125;
+
+    tmpCount++;
+
+&#125;
+
+string final = &quot;&quot;;
+
+for ( int i = 0 ; i &lt; count.length() ; i++ ) &#123;
+    final.push_back(count[i]);
+    final.push_back(numbers[i]);
+&#125;
+
+return final;
+</code></pre>
+<p>}</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Chris Liu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/08/16/CodingChallenge2/">http://example.com/2021/08/16/CodingChallenge2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/08/16/CodingChallenge3/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">CodingChallenge3</div></div></a></div><div class="next-post pull-right"><a href="/2021/08/16/CodingChallenge1/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">CodingChallenge1</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Chris Liu</div><div class="author-info__description">My personal website</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/08/16/CodingChallenge3/" title="CodingChallenge3"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CodingChallenge3"/></a><div class="content"><a class="title" href="/2021/08/16/CodingChallenge3/" title="CodingChallenge3">CodingChallenge3</a><time datetime="2021-08-16T20:01:08.000Z" title="Created 2021-08-16 13:01:08">2021-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/16/CodingChallenge2/" title="CodingChallenge2"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CodingChallenge2"/></a><div class="content"><a class="title" href="/2021/08/16/CodingChallenge2/" title="CodingChallenge2">CodingChallenge2</a><time datetime="2021-08-16T20:00:57.000Z" title="Created 2021-08-16 13:00:57">2021-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/16/CodingChallenge1/" title="CodingChallenge1"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CodingChallenge1"/></a><div class="content"><a class="title" href="/2021/08/16/CodingChallenge1/" title="CodingChallenge1">CodingChallenge1</a><time datetime="2021-08-16T20:00:44.000Z" title="Created 2021-08-16 13:00:44">2021-08-16</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Chris Liu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
